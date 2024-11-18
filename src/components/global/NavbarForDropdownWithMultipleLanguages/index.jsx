@@ -24,13 +24,31 @@ import Link from "next/link";
 import ScrollContext from "@/context/ScrollContext";
 import { SignedOut, SignedIn, UserButton } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
+import axios from "axios";
+import { toast } from "sonner";
 
 function NavbarForDropdownWithMultipleLanguages() {
   const [openMenu, setOpenMenu] = React.useState(false);
   const [openNav, setOpenNav] = React.useState(false);
   const [lang, setLang] = React.useState("English");
   const { targetRef, handleScrollToComponent } = React.useContext(ScrollContext);
-  const router = useRouter()
+  const router = useRouter();
+  const [isManager, setIsManager] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkManager = async () => {
+      const response = await axios.get("/api/check-manager");
+      if (response.data.status === 200) {
+        toast.success(response.data.message);
+        setIsManager(true);
+      }
+      else{
+        toast.error(response.data.message);
+        setIsManager(false);
+      }
+    };
+    checkManager();
+  }, []);
 
   React.useEffect(() => {
     window.addEventListener(
@@ -39,8 +57,8 @@ function NavbarForDropdownWithMultipleLanguages() {
     );
   }, []);
 
-  const handleRouteToAdmin = ()=>{
-    router.push("/admin/dashboard/videos")
+  const handleRouteToAdmin = () => {
+    router.push("/manager/dashboard/videos")
   }
 
   const navList = (
@@ -89,7 +107,7 @@ function NavbarForDropdownWithMultipleLanguages() {
           FAQs
         </a>
       </Typography>
-      <Typography
+      {isManager && <Typography
         as="li"
         variant="small"
         color="blue-gray"
@@ -97,9 +115,9 @@ function NavbarForDropdownWithMultipleLanguages() {
         onClick={handleRouteToAdmin}
       >
         <a href="#" className="flex items-center">
-          Admin
+          Manager
         </a>
-      </Typography>
+      </Typography>}
     </ul>
   );
 
