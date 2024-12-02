@@ -12,8 +12,6 @@ import Footer from "@/components/global/Footer";
 import Faqs from "@/components/global/Faqs";
 import ScrollContext from "@/context/ScrollContext";
 
-export const dynamic = 'force-dynamic';
-
 const HomePage = () => {
   const lenis = useLenis();
   const targetRef = useRef(null);
@@ -29,7 +27,6 @@ const HomePage = () => {
   };
 
   return (
-    
       <ScrollContext.Provider value={{ targetRef, handleScrollToComponent }}>
         <ThemeProvider>
           <ReactLenis root>

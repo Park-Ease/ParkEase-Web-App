@@ -9,8 +9,8 @@ export default function Page() {
         <Image
           src="/parkease-banner.png"
           layout="fill"
-          objectFit="cover"
           alt="Parkease Logo"
+          className='object-cover'
         />
       </div>
 

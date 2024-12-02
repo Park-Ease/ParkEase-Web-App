@@ -8,9 +8,8 @@ export default function Page() {
       <div className="relative w-full md:w-[60%] h-[40%] md:h-full bg-black/90">
         <Image
           src="/parkease-adcard.png"
-          objectFit="cover"
-          objectPosition='center'
-          layout="fill"
+          className='object-cover object-center'
+          fill
           alt="Parkease Logo"
         />
       </div>

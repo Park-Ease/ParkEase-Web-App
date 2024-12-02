@@ -7,8 +7,8 @@ const FullWidthImage = ({ src, alt }) => {
       <Image
         src={src}
         alt={alt}
-        layout="fill"      
-        objectFit="fill"  
+        fill     
+        className='object-cover'
         quality={100}       
       />
     </div>

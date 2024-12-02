@@ -46,23 +46,23 @@ export default function Footer() {
                         <div>
                             <h3 className="font-semibold mb-4">Pages</h3>
                             <ul className="space-y-2">
-                                <li>
-                                    <Link href="#" onClick={() => { targetRef.current = document.getElementById("hero"); handleScrollToComponent(); }} className="hover:text-[#fcd904]">
+                                <li onClick={() => { targetRef.current = document.getElementById("hero"); handleScrollToComponent(); }}>
+                                    <Link href="#" className="hover:text-[#fcd904]">
                                         Home
                                     </Link>
                                 </li>
-                                <li>
-                                    <Link href="#" onClick={() => { targetRef.current = document.getElementById("features"); handleScrollToComponent(); }} className="hover:text-[#fcd904]">
+                                <li onClick={() => { targetRef.current = document.getElementById("features"); handleScrollToComponent(); }}>
+                                    <Link href="#" className="hover:text-[#fcd904]">
                                         Features
                                     </Link>
                                 </li>
-                                <li>
-                                    <Link href="#" onClick={() => { targetRef.current = document.getElementById("testimonials"); handleScrollToComponent(); }} className="hover:text-[#fcd904]">
+                                <li onClick={() => { targetRef.current = document.getElementById("testimonials"); handleScrollToComponent(); }}>
+                                    <Link href="#" className="hover:text-[#fcd904]">
                                         Testimonials
                                     </Link>
                                 </li>
-                                <li>
-                                    <Link href="#" onClick={() => { targetRef.current = document.getElementById("faqs"); handleScrollToComponent(); }} className="hover:text-[#fcd904]">
+                                <li  onClick={() => { targetRef.current = document.getElementById("faqs"); handleScrollToComponent(); }}>
+                                    <Link href="#" className="hover:text-[#fcd904]">
                                         FAQs
                                     </Link>
                                 </li>
