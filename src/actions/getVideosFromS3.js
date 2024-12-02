@@ -48,7 +48,7 @@ const getVideosFromS3 = async (req) => {
     const videos =
       response1.Contents?.map((item) => ({
         key: item.Key,
-        url: `https://${bucketName}.s3.${process.env.AWS_REGION}.amazonaws.com/${item.Key}`,
+        url: `${process.env.AWS_CLOUDFRONT_URL}/${item.Key}`,
         title: item.Key.split("/")[2],
         lastModified: item.LastModified,
         size: item.Size,
