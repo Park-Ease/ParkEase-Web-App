@@ -12,7 +12,6 @@ import {
 } from "@material-tailwind/react";
 
 import content from "@/constants/faq";
-import Meteors from "@/components/ui/meteors";
 
 // Custom icon component
 function Icon({ id, open }) {
@@ -39,10 +38,10 @@ const AccordionCustomIcon = ({ content }) => {
     return (
         <>
             {content.map((item, index) => (
-                <Accordion key={index} open={open === index + 1} icon={<Icon id={index + 1} open={open} />}>
-                    <AccordionHeader className="text-2xl font-funnel-sans font-bold text-[#fcd904] hover:text-[#fcd904]/60" onClick={() => handleOpen(index + 1)}>{item.question}</AccordionHeader>
+                <Accordion key={index} open={open === index + 1} icon={<Icon id={index + 1} open={open} />} className="px-4">
+                    <AccordionHeader className="text-xl md:text-2xl font-funnel-sans font-bold text-[#fcd904] hover:text-[#fcd904]/60" onClick={() => handleOpen(index + 1)}>{item.question}</AccordionHeader>
                     <AccordionBody>
-                        <p className="text-gray-400 font-medium font-funnel-sans text-lg">{item.answer}</p>
+                        <p className="text-gray-400 font-medium font-funnel-sans text-md md:text-lg">{item.answer}</p>
                         {item.link && (
                             <a
                                 href={item.link}
@@ -60,14 +59,12 @@ const AccordionCustomIcon = ({ content }) => {
 
 // FAQ component using AccordionCustomIcon
 const FAQ = () => {
-    
-
     return (
         <section id="faqs" className="relative mx-auto w-screen flex items-center justify-center bg-black/90 py-20">
             <div className="container flex flex-col gap-10">
                 <div>
-                    <h3 className="!mt-0 text-center text-6xl text-[#fcd904] font-funnel-display font-bold">Frequently Asked Questions</h3>
-                    <h4 className="text-muted-foreground text-center text-gray-400 mt-3">
+                    <h3 className="!mt-0 text-center text-4xl md:text-6xl text-[#fcd904] font-funnel-display font-bold px-2">Frequently Asked Questions</h3>
+                    <h4 className="text-muted-foreground text-center text-gray-400 mt-3 px-4">
                         Can&apos;t find the answer you&apos;re looking for? Reach out to our customer support team.
                     </h4>
                 </div>

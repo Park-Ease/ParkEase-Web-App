@@ -4,7 +4,7 @@ import React from "react";
 
 const ParkingSlotCard = ({ slot }) => {
   return (
-    <div className="relative max-w-xs border border-solid border-[#fcd904] rounded-lg transition-all duration-500 hover:shadow-lg">
+    <div className="relative min-w-xs border border-solid border-[#fcd904] rounded-lg transition-all duration-500 hover:shadow-lg">
       {/* Slot Info */}
       <div className="p-4">
         <h4 className="text-lg font-semibold text-white mb-5 transition-all duration-500">

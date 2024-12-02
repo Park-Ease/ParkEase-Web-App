@@ -3,13 +3,13 @@ import Image from 'next/image';
 
 const FullWidthImage = ({ src, alt }) => {
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative w-full h-[70vh] lg:h-screen">
       <Image
         src={src}
         alt={alt}
-        layout="fill"       // Makes the image fill its container
-        objectFit="cover"   // Ensures the image covers the entire div without distortion
-        quality={100}       // Optional: Set image quality for better resolution
+        layout="fill"      
+        objectFit="fill"  
+        quality={100}       
       />
     </div>
   );

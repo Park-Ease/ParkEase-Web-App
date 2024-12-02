@@ -1,15 +1,23 @@
 "use client";
+
+import React from "react"
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@material-tailwind/react";
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import { TextShine } from "@/components/ui/text-shine";
+import ScrollContext from "@/context/ScrollContext";
 
 export default function Footer() {
+    const { targetRef, handleScrollToComponent } = React.useContext(ScrollContext);
+    const socialPostMessage = encodeURIComponent(
+        "Check out the innovative ParkEase Parking Slot Detection and Management App! Truly revolutionary idea with intuitive interfaces on mobile and web. Really loved the idea and enjoyed exploring the features! Will definitely download and try it out! Big shoutout to the amazing creators: @ArjunNambiar, @AdityaKiran, @AshishBaghel, and @AjaySBiradar. #ParkEase #SmartParking #MakeParkingSeamless"
+    );
+
     return (
         <footer id="socials" className=" py-12 px-4 md:px-6">
             <div className="container mx-auto">
-                <div className="flex flex-col gap-28 md:flex-row justify-between">
+                <div className="flex flex-col gap-10 md:gap-28 md:flex-row justify-between">
                     <div className="mb-8 md:mb-0">
                         <Image src="/parkease-logo.png" alt="Parkease Logo" width={50} height={50} />
                         <Link href="/" className="flex items-center gap-2 mt-2">
@@ -19,11 +27,11 @@ export default function Footer() {
                         <h1 className="dark:text-gray-300 mt-4">
                             Made with ❣️ by{" "}
                             <span className="dark:text-[#039ee4]">
-                                <Link href="https://x.com/arihantCodes">@A4Awesome Team</Link>
+                                <Link href="https://github.com/Park-Ease">@A4Awesome Team</Link>
                             </span>
                         </h1>
                         <div className="mt-2">
-                            <Link href="https://x.com/compose/tweet?text=I%27ve%20been%20using%20%23SpectrumUI%20 share%20yourtought%20%40arihantCodes%20">
+                            <Link href={`https://www.linkedin.com/sharing/share-offsite/?url=https://parkease-web-app.vercel.app&summary=${socialPostMessage}`}>
                                 <Button variant="filled" className="flex gap-2 font-funnel-sans font-semibold whitespace-nowrap">
                                     Share Your Thoughts On
                                     <ArrowTopRightOnSquareIcon className="icon-class ml-1 w-3.5" />
@@ -39,22 +47,22 @@ export default function Footer() {
                             <h3 className="font-semibold mb-4">Pages</h3>
                             <ul className="space-y-2">
                                 <li>
-                                    <Link href="#home" className="hover:text-[#fcd904]">
+                                    <Link href="#" onClick={() => { targetRef.current = document.getElementById("hero"); handleScrollToComponent(); }} className="hover:text-[#fcd904]">
                                         Home
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="#features" className="hover:text-[#fcd904]">
+                                    <Link href="#" onClick={() => { targetRef.current = document.getElementById("features"); handleScrollToComponent(); }} className="hover:text-[#fcd904]">
                                         Features
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="#testimonials" className="hover:text-[#fcd904]">
+                                    <Link href="#" onClick={() => { targetRef.current = document.getElementById("testimonials"); handleScrollToComponent(); }} className="hover:text-[#fcd904]">
                                         Testimonials
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="#faqs" className="hover:text-[#fcd904]">
+                                    <Link href="#" onClick={() => { targetRef.current = document.getElementById("faqs"); handleScrollToComponent(); }} className="hover:text-[#fcd904]">
                                         FAQs
                                     </Link>
                                 </li>
@@ -64,19 +72,19 @@ export default function Footer() {
                             <h3 className="font-semibold mb-4">Socials</h3>
                             <ul className="space-y-2">
                                 <li>
-                                    <Link href="https://github.com/arihantcodes/spectrum-ui" className="hover:text-[#fcd904] flex items-center">
+                                    <Link href="https://github.com/Park-Ease" className="hover:text-[#fcd904] flex items-center">
                                         Github
                                         <ArrowTopRightOnSquareIcon className="ml-1 w-4" />
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="https://www.linkedin.com/in/arihantcodes" className="hover:text-[#fcd904] flex items-center">
+                                    <Link href="https://www.linkedin.com/in/arjun-nambiar-439aaa255/" className="hover:text-[#fcd904] flex items-center">
                                         LinkedIn
                                         <ArrowTopRightOnSquareIcon className="ml-1 w-4" />
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="https://x.com/arihantcodes" className="hover:text-[#fcd904] flex items-center">
+                                    <Link href="https://x.com/ArjunNambiar03" className="hover:text-[#fcd904] flex items-center">
                                         X
                                         <ArrowTopRightOnSquareIcon className="ml-1 w-4" />
                                     </Link>
@@ -92,7 +100,7 @@ export default function Footer() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/tos" className="hover:text-[#fcd904]">
+                                    <Link href="/terms" className="hover:text-[#fcd904]">
                                         Terms of Service
                                     </Link>
                                 </li>

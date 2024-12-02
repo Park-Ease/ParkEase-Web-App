@@ -1,7 +1,7 @@
 
 const TestimonialCard = ({ stars, text, userName, designation }) => {
     return (
-        <div className="group relative h-[300px] w-[450px] bg-white rounded-lg border border-gray-200 shadow-lg p-5 flex flex-col justify-between">
+        <div className="group relative h-[300px] w-[400px] md:w-[450px] bg-white rounded-lg border border-gray-200 shadow-lg p-5 flex flex-col justify-between">
             <div>
                 <div className="flex mb-2">
                     {[...Array(stars)].map((_, i) => (
