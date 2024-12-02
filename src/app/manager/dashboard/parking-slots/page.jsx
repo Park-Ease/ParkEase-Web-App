@@ -18,7 +18,7 @@ const AdminParkingSlotsPage = async () => {
         </p>
       )}
       {status === 200 && data.length > 0 && (
-        <div className="bg-red-500 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {data.map((slot, index) => (
             <ParkingSlotCard key={slot.id} slot={slot} />
           ))}

@@ -9,11 +9,11 @@ const ProfilePage = () => {
     console.log("user from clerk", user);
 
     if (!user) {
-        return <div className="flex items-center justify-center h-screen bg-black text-white">Loading...</div>;
+        return <div className="h-screen text-3xl font-funnel-sans flex items-center justify-center bg-black/90 text-white">Loading...</div>;
     }
 
     return (
-        <div className="p-6 w-screen h-screen bg-black/90 space-y-8 flex flex-col items-center">
+        <div className="p-6 h-screen bg-black/90 space-y-8 flex flex-col items-center">
             <h1 className="text-[#fcd904] text-4xl md:text-5xl font-funnel-sans font-bold text-center mt-14">
                 Profile
             </h1>
@@ -22,13 +22,10 @@ const ProfilePage = () => {
                     <Avatar src={user?.imageUrl} alt="avatar" size="xl" />
                 </div>
                 <div className="text-white text-lg md:text-xl my-2">
-                    <strong>User ID:</strong> {user?.id || "user_124453223"}
+                    <strong>Full Name:</strong> {user?.fullName || "Jane Doe"}
                 </div>
                 <div className="text-white text-lg md:text-xl my-2">
                     <strong>Email:</strong> {user?.emailAddresses[0]?.emailAddress || "somebody@gmail.com"}
-                </div>
-                <div className="text-white text-lg md:text-xl my-2">
-                    <strong>Full Name:</strong> {user?.fullName || "Jane Doe"}
                 </div>
                 <div className="text-white text-lg md:text-xl my-2">
                     <strong>Account Created At:</strong>{" "}
