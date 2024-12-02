@@ -40,7 +40,7 @@ export const TextShine = ({
   return (
     <motion.span
       ref={textRef}
-      className="relative w-fit text-transparent bg-clip-text text-center text-3xl md:text-5xl lg:text-[10rem] font-funnel-display font-bold"
+      className="relative w-fit text-transparent bg-clip-text text-center text-7xl md:text-8xl lg:text-[10rem] font-funnel-display font-bold px-2"
       style={{
         backgroundImage: `linear-gradient(to right, #222 0%, ${shineColor} 10%, #222 20%)`,
         backgroundSize: "200%",
