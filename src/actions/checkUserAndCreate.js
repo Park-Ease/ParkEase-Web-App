@@ -5,7 +5,7 @@ import { Role } from "@prisma/client";
 const checkUserAndCreate = async (req) => {
   try {
     const user = await currentUser();
-    // console.log("User:", user);
+    //console.log("User:", user);
     const email = user.emailAddresses[0].emailAddress;
 
     if (!user || !email)
