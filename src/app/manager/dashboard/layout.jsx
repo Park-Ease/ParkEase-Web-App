@@ -106,7 +106,7 @@ function SidebarWithLogo({ children }) {
             <p className="text-lg font-funnel-sans font-normal">Managers</p>
           </ListItem>
         </Link>
-        <hr className="my-10 border-blue-gray-50" />
+        <hr className="my-6 border-blue-gray-50" />
         <Link href="/manager/dashboard/profile">
           <ListItem
             className={`
@@ -121,7 +121,7 @@ function SidebarWithLogo({ children }) {
           </ListItem>
         </Link>
         <SignOutButton redirectUrl="/">
-          <ListItem className="text-lg bg-red-600 text-white font-funnel-sans font-normal hover:bg-red-600">
+          <ListItem className="text-lg bg-red-600 text-white mb-5 font-funnel-sans font-normal hover:bg-red-600">
             <ListItemPrefix>
               <PowerIcon className="h-5 w-5" />
             </ListItemPrefix>
@@ -160,7 +160,7 @@ function SidebarWithLogo({ children }) {
           </Typography>
           <Typography
             as="a"
-            href="#"
+            href="/upgrade"
             variant="small"
             className="font-funnel-sans font-medium"
           >

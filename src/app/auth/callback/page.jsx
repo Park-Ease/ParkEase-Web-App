@@ -8,7 +8,7 @@ const AuthCallback = async () => {
   return (
     <div className="flex justify-center items-center">
         <h1 className="text-6xl font-semibold font-funnel-display">Authenticating...</h1>
-        <ToastHandler message={message} isError={status !== 200 || status!=201} redirectUrls={["/signin","/"]} />
+        <ToastHandler message={message} isError={status !== 200 || status!=201} redirectUrls={["/sign-in","/"]} />
     </div>
   )
 }

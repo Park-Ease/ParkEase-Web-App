@@ -3,7 +3,7 @@ import getUserParkingSlots from "@/actions/getUserParkingSlots";
 import ToastHandler from "@/components/global/ToastHandler";
 import ParkingSlotCard from "@/components/global/ParkingSlotCard";
 
-const AdminManagersPage = async () => {
+const AdminParkingSlotsPage = async () => {
   const { status, data, message } = await getUserParkingSlots();
 
   return (
@@ -18,7 +18,7 @@ const AdminManagersPage = async () => {
         </p>
       )}
       {status === 200 && data.length > 0 && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="bg-red-500 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {data.map((slot, index) => (
             <ParkingSlotCard key={slot.id} slot={slot} />
           ))}
@@ -28,4 +28,4 @@ const AdminManagersPage = async () => {
   );
 };
 
-export default AdminManagersPage;
+export default AdminParkingSlotsPage;

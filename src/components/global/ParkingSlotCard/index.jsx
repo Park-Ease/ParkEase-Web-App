@@ -2,7 +2,7 @@
 
 import React from "react";
 
-const ManagerCard = ({ slot }) => {
+const ParkingSlotCard = ({ slot }) => {
   return (
     <div className="relative max-w-xs border border-solid border-[#fcd904] rounded-lg transition-all duration-500 hover:shadow-lg">
       {/* Slot Info */}
@@ -30,4 +30,4 @@ const ManagerCard = ({ slot }) => {
   );
 };
 
-export default ManagerCard;
+export default ParkingSlotCard;
