@@ -2,6 +2,8 @@ import React from 'react';
 import checkUserAndCreate from '@/actions/checkUserAndCreate';
 import ToastHandler from '@/components/global/ToastHandler'; 
 
+export const dynamic = 'force-dynamic';
+
 const AuthCallback = async () => {
     const {status,message} = await checkUserAndCreate();
 

@@ -10,7 +10,6 @@ export const metadata = {
   keywords: "parking management, ParkEase, efficient parking solutions, parking lot system, parking app, parking software",
   author: "A4Awesome Team",
   robots: "index, follow",
-  themeColor: "#4CAF50",
 };
 
 export default function RootLayout({ children }) {
