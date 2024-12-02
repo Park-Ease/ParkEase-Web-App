@@ -20,7 +20,8 @@ const Upgrade = () => {
               <h3 className="text-gray-500 text-base md:text-lg font-normal leading-relaxed mt-4">
                 PRO version will be out soon...
               </h3>
-              <ul className="text-gray-300 mt-10 text-sm md:text-base font-normal leading-snug space-y-2">
+              <ul className="text-gray-300 mt-8 text-sm md:text-base font-normal leading-snug space-y-2">
+                <li className="text-lg text-gray-600">Features</li>
                 <li>🔒 Parking Theft Detection</li>
                 <li>🚗 Better Slot Priority Management</li>
                 <li>📊 Advanced Parking Analytics</li>
@@ -29,7 +30,7 @@ const Upgrade = () => {
               </ul>
             </div>
           </div>
-          <p className="text-center text-gray-500 text-sm md:text-base font-normal mt-12">
+          <p className="text-center text-gray-500 text-sm md:text-base font-normal mt-10">
             Get in touch with us:{" "}
             <a
               href="mailto:sslayer441@gmail.com"
