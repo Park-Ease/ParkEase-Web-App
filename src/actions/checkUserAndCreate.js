@@ -5,7 +5,7 @@ import { Role } from "@prisma/client";
 const checkUserAndCreate = async (req) => {
   try {
     const user = await currentUser();
-    console.log("User:", user);
+    // console.log("User:", user);
     const email = user.emailAddresses[0].emailAddress;
 
     if (!user || !email)
@@ -35,7 +35,7 @@ const checkUserAndCreate = async (req) => {
 
     if (!newUser)
       return {
-        message: "New user could not be created!",
+        message: "New user could not be created! Please login again.",
         status: 500,
       };
 
@@ -48,7 +48,7 @@ const checkUserAndCreate = async (req) => {
   } catch (error) {
     console.log("Error in checkUserAndCreate:", error);
     return {
-      message: "Error while checking if user exists!",
+      message: "Error while checking if user exists! Please login again.",
       status: 500,
     };
   }

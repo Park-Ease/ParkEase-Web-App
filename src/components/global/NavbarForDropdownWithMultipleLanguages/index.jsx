@@ -156,11 +156,11 @@ function NavbarForDropdownWithMultipleLanguages() {
         <div className="ml-2 hidden lg:block">{navList}</div>
         <div className="hidden flex-wrap items-center gap-2 lg:flex">
           <SignedOut>
-            <Button variant="gradient" size="sm" className="font-funnel-sans font-medium">
-              <Link href="/sign-in">Login</Link>
+            <Button onClick={()=>router.push("/sign-in")} variant="gradient" size="sm" className="font-funnel-sans font-medium">
+              <Link href="#">Login</Link>
             </Button>
-            <Button variant="gradient" size="sm" className="font-funnel-sans font-medium">
-              <Link href="/sign-up">Sign Up</Link>
+            <Button onClick={()=>router.push("/sign-up")} variant="gradient" size="sm" className="font-funnel-sans font-medium">
+              <Link href="#">Sign Up</Link>
             </Button>
           </SignedOut>
 

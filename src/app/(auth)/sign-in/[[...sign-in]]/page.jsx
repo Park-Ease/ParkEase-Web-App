@@ -8,7 +8,7 @@ export default function Page() {
       <div className="absolute inset-0 -z-10">
         <Image
           src="/parkease-banner.png"
-          layout="fill"
+          fill
           alt="Parkease Logo"
           className='object-cover'
         />
