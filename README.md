@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ParkEase Web App 🚗
 
-## Getting Started
+![ParkEase Banner](./public/parkease-banner1.png "ParkEase Parking Slot Management")
 
-First, run the development server:
+ParkEase is a modern web application that simplifies parking management and slot detection. Built with cutting-edge web technologies, it delivers a seamless user experience and ensures scalability for real-world deployment.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Features
+- **User Authentication**
+- **Smooth Scrolling**
+- **Cool Animations**
+- **Intuitive UI**
+- **Scalable Backend**
+- **Real Time Parking Slot Monitoring**
+- **High Availability and Speed**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠 Tech Stack
+- **Frontend**:
+  - [Next.js](https://nextjs.org): React-based framework for server-side rendering and static site generation.
+  - [React.js](https://reactjs.org): Powerful library for building user interfaces.
+  - [Lenis](https://github.com/studio-freight/lenis): Smooth scroll library for a polished user experience.
+  - [Framer Motion](https://www.framer.com/motion/): Declarative animations and transitions.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Backend**:
+  - [Prisma](https://www.prisma.io): ORM for type-safe and efficient database access.
+  - [AWS S3](https://aws.amazon.com/s3): Secure and scalable storage for static assets.
+  - [AWS CloudFront](https://aws.amazon.com/cloudfront/): CDN for fast and secure content delivery.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Authentication**:
+  - [Clerk](https://clerk.dev): Robust authentication system with support for multi-factor authentication and social login.
 
-## Learn More
+## 🚀 Getting Started
 
-To learn more about Next.js, take a look at the following resources:
+### Prerequisites
+- **Node.js**: Ensure Node.js (v16 or above) is installed.
+- **AWS Account**: For S3 and CloudFront setup.
+- **Clerk API Keys**: Required for authentication.
+- **Prisma**: Set up your database schema with Prisma.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Installation
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/yourusername/parkease-webapp.git
+   cd parkease-webapp
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+3. **Set Up Environment Variables**: 
+Create a .env file in the root directory and add the following:
+   ```bash
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=""
+    NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+    NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+    NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/auth/callback
+    NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/sign-in
+    CLERK_SECRET_KEY=""
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    AWS_REGION=""
+    AWS_S3_BUCKET_NAME=""
+    AWS_ACCESS_KEY_ID=""
+    AWS_SECRET_ACCESS_KEY=""
+    AWS_CLOUDFRONT_URL="https://<cloudfront_id>.cloudfront.net"
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    DATABASE_URL="mongodb+srv://<username>:<password>@cluster0.xrttr.mongodb.net/parkease?retryWrites=true&w=majority&appName=Cluster0"
+    NODE_ENV="development"
+   ```
+
+4. **Run the Development Server**:
+   ```bash
+   npm run dev
+   ```
+
+The app will be available at http://localhost:3000.
+
+
+# 🛡 Security
+ParkEase prioritizes user security with secure authentication flows, HTTPS via AWS CloudFront, and strict access controls.
+
+# 🤝 Contributing
+Contributions are welcome! To contribute:
+
+- Fork the repository.
+- Create a new branch: git checkout -b feature-name.
+- Commit your changes: git commit -m 'Add feature'.
+- Push to the branch: git push origin feature-name.
+- Submit a pull request.
+
+# 🌟 Acknowledgments
+- A special thanks to my friends for their incredible support and contributions:
+  - [Ajay S Biradar](https://github.com/Ajay-S-Biradar)
+  - [Aditya Kiran](https://github.com/adityakiran1423)
+  - [Ashish Baghel](https://github.com/b-ash-18)
+
+# 📬 Contact
+For questions, suggestions, or feedback, feel free to reach out:
+
+- Email: sslayer441@gmail.com
+- GitHub: ShadowSlayer03
+
+Enjoy using ParkEase! 🚗💨
