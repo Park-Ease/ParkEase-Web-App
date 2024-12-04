@@ -76,10 +76,10 @@ Create a .env file in the root directory and add the following:
 The app will be available at http://localhost:3000.
 
 
-# 🛡 Security
+## 🛡 Security
 ParkEase prioritizes user security with secure authentication flows, HTTPS via AWS CloudFront, and strict access controls.
 
-# 🤝 Contributing
+## 🤝 Contributing
 Contributions are welcome! To contribute:
 
 - Fork the repository.
@@ -88,13 +88,13 @@ Contributions are welcome! To contribute:
 - Push to the branch: git push origin feature-name.
 - Submit a pull request.
 
-# 🌟 Acknowledgments
+## 🌟 Acknowledgments
 - A special thanks to my friends for their incredible support and contributions:
   - [Ajay S Biradar](https://github.com/Ajay-S-Biradar)
   - [Aditya Kiran](https://github.com/adityakiran1423)
   - [Ashish Baghel](https://github.com/b-ash-18)
 
-# 📬 Contact
+## 📬 Contact
 For questions, suggestions, or feedback, feel free to reach out:
 
 - Email: sslayer441@gmail.com
