@@ -47,10 +47,10 @@ model ParkingSlot {
   id         String     @id @default(auto()) @map("_id") @db.ObjectId
   lotId      String     @db.ObjectId
   lot        ParkingLot @relation(fields: [lotId], references: [id])
-  slotNumber Int
-  status     Boolean    @default(false)
-  locationX  Float
-  locationY  Float
+  slotNumber Int        
+  status     Boolean    @default(true)
+  locationX  Float?
+  locationY  Float?
   createdAt  DateTime   @default(now())
   updatedAt  DateTime   @updatedAt
 }

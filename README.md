@@ -17,6 +17,7 @@ ParkEase is a modern web application that simplifies parking management and slot
 - **Frontend**:
   - [Next.js](https://nextjs.org): React-based framework for server-side rendering and static site generation.
   - [React.js](https://reactjs.org): Powerful library for building user interfaces.
+  - [Material Tailwind UI](https://www.material-tailwind.com/): An attractive UI library with pre-built Tailwind CSS components.
   - [Lenis](https://github.com/studio-freight/lenis): Smooth scroll library for a polished user experience.
   - [Framer Motion](https://www.framer.com/motion/): Declarative animations and transitions.
 
@@ -39,8 +40,8 @@ ParkEase is a modern web application that simplifies parking management and slot
 ### Installation
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/parkease-webapp.git
-   cd parkease-webapp
+   git clone https://github.com/Park-Ease/ParkEase-Web-App.git
+   cd ParkEase-Web-App
    ```
 
 2. **Install Dependencies**:
