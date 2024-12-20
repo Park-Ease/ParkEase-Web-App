@@ -49,7 +49,7 @@ function SidebarWithLogo({ children }) {
       setIsManager(false);
     };
     checkManager();
-  }, []);
+  }, [router]);
 
   return (
     isManager && (
@@ -68,9 +68,8 @@ function SidebarWithLogo({ children }) {
 
         {/* Sidebar */}
         <Card
-          className={`fixed top-0 left-0 h-full w-[18rem] lg:w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5 bg-white transform ${
-            isOpen ? "translate-x-0" : "-translate-x-full"
-          } transition-transform duration-300 lg:translate-x-0 z-50 rounded-none`}
+          className={`fixed top-0 left-0 h-full w-[18rem] lg:w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5 bg-white transform ${isOpen ? "translate-x-0" : "-translate-x-full"
+            } transition-transform duration-300 lg:translate-x-0 z-50 rounded-none`}
         >
           {/* Close Button Inside Sidebar */}
           <button
@@ -98,11 +97,10 @@ function SidebarWithLogo({ children }) {
           <List>
             <Link href="/manager/dashboard/videos">
               <ListItem
-                className={`text-lg font-funnel-sans font-normal hover:bg-[#fcd904]/50 hover:text-black
-                  ${
-                    pathname === "/manager/dashboard/videos"
-                      ? "bg-[#fcd904] text-black"
-                      : ""
+                className={`text-lg font-funnel-sans font-normal hover:bg-[#fcd904]/50 hover:text-black active:bg-[#fcd904]/50 focus:text-black focus:bg-[#fcd904]
+                  ${pathname === "/manager/dashboard/videos"
+                    ? "bg-[#fcd904] text-black"
+                    : ""
                   }  
                 `}
               >
@@ -114,11 +112,10 @@ function SidebarWithLogo({ children }) {
             </Link>
             <Link href="/manager/dashboard/parking-slots">
               <ListItem
-                className={`text-lg font-funnel-sans font-normal hover:bg-[#fcd904]/50 hover:text-black
-                  ${
-                    pathname === "/manager/dashboard/parking-slots"
-                      ? "bg-[#fcd904] text-black"
-                      : ""
+                className={`text-lg font-funnel-sans font-normal hover:bg-[#fcd904]/50 hover:text-black active:bg-[#fcd904]/50 focus:text-black focus:bg-[#fcd904]
+                  ${pathname === "/manager/dashboard/parking-slots"
+                    ? "bg-[#fcd904] text-black"
+                    : ""
                   }  
                 `}
               >
@@ -130,11 +127,10 @@ function SidebarWithLogo({ children }) {
             </Link>
             <Link href="/manager/dashboard/managers">
               <ListItem
-                className={`text-lg font-funnel-sans font-normal hover:bg-[#fcd904]/50 hover:text-black
-                  ${
-                    pathname === "/manager/dashboard/managers"
-                      ? "bg-[#fcd904] text-black"
-                      : ""
+                className={`text-lg font-funnel-sans font-normal hover:bg-[#fcd904]/50 hover:text-black active:bg-[#fcd904]/50 focus:text-black focus:bg-[#fcd904]
+                  ${pathname === "/manager/dashboard/managers"
+                    ? "bg-[#fcd904] text-black"
+                    : ""
                   }  
                 `}
               >
@@ -147,11 +143,10 @@ function SidebarWithLogo({ children }) {
             <hr className="my-6 border-blue-gray-100" />
             <Link href="/manager/dashboard/profile">
               <ListItem
-                className={`text-lg font-funnel-sans font-normal hover:bg-[#fcd904]/50 hover:text-black
-                  ${
-                    pathname === "/manager/dashboard/profile"
-                      ? "bg-[#fcd904] text-black"
-                      : ""
+                className={`text-lg font-funnel-sans font-normal hover:bg-[#fcd904]/50 hover:text-black active:bg-[#fcd904]/50 focus:text-black focus:bg-[#fcd904]
+                ${pathname === "/manager/dashboard/profile"
+                    ? "bg-[#fcd904] text-black"
+                    : "text-inherit"
                   }  
                 `}
               >
