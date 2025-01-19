@@ -50,7 +50,6 @@ export default function RootLayout({ children }) {
               logoLinkUrl: "/",
               termsPageUrl: "/terms",
               privacyPageUrl: "/privacy-policy",
-              unsafe_disableDevelopmentModeWarnings: true,
             },
           }}
         >

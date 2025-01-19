@@ -3,10 +3,10 @@
 import React from "react";
 import { useUser } from "@clerk/clerk-react";
 import { Avatar } from "@material-tailwind/react";
+import { formatDate } from "@/lib/utils";
 
 const ProfilePage = () => {
     const { user } = useUser();
-    console.log("user from clerk", user);
 
     if (!user) {
         return <div className="h-screen text-3xl font-funnel-sans flex items-center justify-center bg-black/90 text-white">Loading...</div>;
@@ -21,19 +21,21 @@ const ProfilePage = () => {
                 <div className="text-white mb-6 flex self-center">
                     <Avatar src={user?.imageUrl} alt="avatar" size="xl" />
                 </div>
-                <div className="text-white text-lg md:text-xl my-2">
-                    <strong>Full Name:</strong> {user?.fullName || "Jane Doe"}
-                </div>
-                <div className="text-white text-lg md:text-xl my-2">
-                    <strong>Email:</strong> {user?.emailAddresses[0]?.emailAddress || "somebody@gmail.com"}
-                </div>
-                <div className="text-white text-lg md:text-xl my-2">
-                    <strong>Account Created At:</strong>{" "}
-                    {new Date(user?.createdAt).toLocaleDateString() || "12th January 2024"}
-                </div>
-                <div className="text-white text-lg md:text-xl my-2">
-                    <strong>Last Sign-in:</strong>{" "}
-                    {new Date(user?.lastSignInAt).toLocaleDateString() || "14th January 2024"}
+                <div className="space-y-4 w-full">
+                    {[
+                        { label: "Full Name", value: user?.fullName || "Jane Doe" },
+                        { label: "Email", value: user?.emailAddresses[0]?.emailAddress || "somebody@gmail.com" },
+                        { label: "Account Created At", value: formatDate(user?.createdAt) || "12th January 2024" },
+                        { label: "Last Sign-in", value: formatDate(user?.lastSignInAt) || "14th January 2024" },
+                    ].map((item, index) => (
+                        <div
+                            key={index}
+                            className="text-white text-lg md:text-xl flex justify-between items-center"
+                        >
+                            <strong className="w-1/2">{item.label}:</strong>
+                            <span className="w-1/2 text-right">{item.value}</span>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

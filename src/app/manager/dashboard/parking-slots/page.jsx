@@ -12,12 +12,12 @@ const AdminParkingSlotsPage = async () => {
         Parking Slots
       </h1>
       <ToastHandler message={message} isError={status !== 200} />
-      {status === 200 && data.length === 0 && (
+      {status === 200 && data?.length === 0 && (
         <p className="text-white text-2xl font-funnel-sans font-bold">
           No parking slots found
         </p>
       )}
-      {status === 200 && data.length > 0 && (
+      {status === 200 && data?.length > 0 && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {data.map((slot, index) => (
             <ParkingSlotCard key={slot.id} slot={slot} />
