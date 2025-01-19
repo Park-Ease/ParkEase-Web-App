@@ -11,3 +11,6 @@ const ToastHandler = ({ message, isError }) => {
 };
 
 export default ToastHandler;
+
+// This ToastHandler is useful to create toasts on pages that are server-rendered.
+// On client-rendered pages or components, we can directly use "toast" from sonner.
