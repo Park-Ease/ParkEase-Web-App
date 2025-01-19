@@ -37,7 +37,7 @@ const getUserParkingSlots = async () => {
       };
     }
 
-    const parkingSlots = dbUser.manager.lot.slots;
+    const parkingSlots = dbUser.manager?.lot?.slots || [];
 
     return {
       status: 200,
