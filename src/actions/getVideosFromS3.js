@@ -56,7 +56,7 @@ const getVideosFromS3 = async (req) => {
       
     const filteredVideos = videos.filter(video => video.title !== 'placeholder.txt');
 
-    console.log("Filtered Video Data from S3:", filteredVideos);
+    //console.log("Filtered Video Data from S3:", filteredVideos);
 
     return {
       status: 200,
