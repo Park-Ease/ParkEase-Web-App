@@ -2,12 +2,13 @@ import React from "react";
 import getAllManagers from "@/actions/getAllManagers";
 import ToastHandler from "@/components/global/ToastHandler";
 import ManagerCard from "@/components/global/ManagerCard";
+import Link from "next/link";
 
 const AdminManagersPage = async () => {
-  const { status, data, message } = await getAllManagers();
+  const { status, data, message, role } = await getAllManagers();
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center bg-black/90 px-16 py-10">
+    <div className="relative w-full min-h-screen flex flex-col items-center bg-black/90 px-16 py-10">
       <h1 className="text-[#fcd904] text-5xl text-center font-funnel-sans font-bold mb-10">
         Managers
       </h1>
@@ -24,7 +25,18 @@ const AdminManagersPage = async () => {
           ))}
         </div>
       )}
+
+      {role=="admin" && (
+        <Link
+        href={"/manager/dashboard/managers/add"}
+          className="absolute bottom-10 right-10 text-black font-bold bg-[#fcd904] px-6 py-3 rounded-lg shadow-md hover:bg-[#dcb304] hover:shadow-lg transition-all duration-300"
+        >
+          Add +
+        </Link>
+      )}
+
     </div>
+
   );
 };
 
