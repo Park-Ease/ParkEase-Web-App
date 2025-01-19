@@ -33,19 +33,18 @@ function NavbarForDropdownWithMultipleLanguages() {
   const [lang, setLang] = React.useState("English");
   const { targetRef, handleScrollToComponent } = React.useContext(ScrollContext);
   const router = useRouter();
-  const [isManager, setIsManager] = React.useState(false);
+  const [role, setRole] = React.useState("user");
 
   React.useEffect(() => {
     const checkManager = async () => {
-      const response = await axios.get("/api/check-manager");
+      const response = await axios.get("/api/check-role");
       if (response.data.status === 200) {
         toast.success(response.data.message);
-        setIsManager(true);
       }
       else{
         toast.error(response.data.message);
-        setIsManager(false);
       }
+      setRole(response.data.role);
     };
     checkManager();
   }, []);
@@ -107,7 +106,7 @@ function NavbarForDropdownWithMultipleLanguages() {
           FAQs
         </a>
       </Typography>
-      {isManager && <Typography
+      {(role=="admin" || role=="manager") && <Typography
         as="li"
         variant="small"
         color="blue-gray"

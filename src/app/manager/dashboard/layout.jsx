@@ -29,30 +29,32 @@ import { SignOutButton } from "@clerk/nextjs";
 function SidebarWithLogo({ children }) {
   const [isOpen, setIsOpen] = useState(false); // For toggling sidebar
   const [openAlert, setOpenAlert] = React.useState(true);
-  const [isManager, setIsManager] = React.useState(false);
+  const [role, setRole] = React.useState("user");
   const pathname = usePathname();
   const router = useRouter();
 
   useEffect(() => {
-    const checkManager = async () => {
-      const response = await axios.get("/api/check-manager");
+    const checkRole = async () => {
+      const response = await axios.get("/api/check-role");
       if (response.data.status === 200) {
+        setRole(response.data.role);
         toast.success(response.data.message);
-        setIsManager(true);
         return;
       } else if (response.data.status === 403 || response.data.status === 400) {
+        setRole(response.data.role);
         toast.error(response.data.message);
         router.push("/");
       } else {
+        setRole(response.data.role);
         toast.error(response.data.message);
       }
-      setIsManager(false);
+      console.log("The role from useEffect is:",response.data.role);
     };
-    checkManager();
+    checkRole();
   }, [router]);
 
   return (
-    isManager && (
+    (role=="admin" || role=="manager") && (
       <div className="flex">
         {/* Hamburger Menu for small screens */}
         <button
