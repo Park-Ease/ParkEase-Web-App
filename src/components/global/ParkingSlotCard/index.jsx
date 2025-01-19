@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { formatDate } from "@/lib/utils";
 
 const ParkingSlotCard = ({ slot }) => {
   return (
@@ -23,7 +24,7 @@ const ParkingSlotCard = ({ slot }) => {
           Longitude: {slot.locationY || "N/A"}
         </p>
         <p className="text-md font-normal text-gray-400">
-          Created At: {new Date(slot.createdAt).toLocaleDateString() || "N/A"}
+          Created At: {formatDate(slot.createdAt) || "N/A"}
         </p>
       </div>
     </div>
